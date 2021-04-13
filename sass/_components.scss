@@ -1,0 +1,230 @@
+.digitalBanking{
+  background-color: $color-neutral-lightgray;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  justify-content: center;
+  height: 45rem;
+  margin-top: 8rem;
+}
+
+.text{
+  grid-column: 1/2;
+  display: grid;
+  align-self: center;
+  grid-row-gap: 2rem;
+  padding-left: 10vw;
+  //margin-top: -35rem;
+
+  grid-template-columns: minmax(min-content, 45rem);
+
+  &__title{
+    font-family: $font-primary;
+    font-size: 3.5rem;
+    color: $color-primary-darkblue;
+    line-height: 1.2;
+  }
+  &__text{
+    font-family: $font-primary;
+    font-size: 1.8rem;
+    color: $color-neutral-grayishblue;
+    line-height: 1.2;
+  }
+}
+
+.img-placeholder{
+  grid-column: 2/-1;
+  position: relative;
+  //overflow-x: hidden;
+
+  background-image: url(../img/bg-intro-desktop.svg);
+  background-size: 125%;
+  background-repeat: no-repeat;
+  background-position: left center;
+  height: 100%;
+
+}
+
+.img-mockup{
+
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 55rem;
+  height: auto;
+  transform: translateX(10rem) translateY(-10rem);
+}
+
+//////////////SECTION 2 ////////////////
+
+.section{
+  font-family: $font-primary;
+
+  &--latest{
+    background-color: $color-neutral-lightgray;
+  }
+
+  &--why{
+    background-color: $color-neutral-lightgreyishblue;
+  }
+
+  &__head-title{
+    grid-column: 2/3;
+    font-size: 3rem;
+    color: $color-primary-darkblue;
+  }
+
+  &__head-text{
+    width: 70%;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    color: $color-neutral-grayishblue;
+  }
+
+  &__container{
+    display: grid;
+    align-items: center;
+    //grid-template-columns: 10% 80% 10%;
+    grid-row-gap: 5rem;
+    padding: 10rem 10vw;
+  }
+}
+
+.section-cards{
+
+  grid-column: 2/3;
+  display: grid;
+  grid-column-gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+
+  &--why{
+    grid-row: 3/4;
+  }
+
+  &--latest{
+    grid-row: 2/3;
+  }
+}
+
+///////////////// ANIMATION ////////////////////
+
+@keyframes moveInLeft {
+  0%{
+    opacity: 0;
+    transform: translateX(-100rem);
+  }
+  80%{
+    transform: translateX(1rem);
+  }
+  100%{
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.adv-box-2{
+  animation-name: moveInLeft;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+}
+.adv-box-1{
+  animation-name: moveInLeft;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+}
+
+.adv-box-3{
+  animation-name: moveInLeft;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+}
+.adv-box-4{
+  animation-name: moveInLeft;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+}
+
+//////////////////////////////////////////////////////////////////////////
+.advantage-box{
+  display: grid;
+  grid-row-gap: 3rem;
+  font-family: $font-primary;
+
+  &__img{
+    width: 6rem;
+    height: 6rem;
+  }
+  &__title{
+    font-size: 2.5rem;
+    color: $color-primary-darkblue;
+  }
+  &__text{
+    font-size: 1.6rem;
+    line-height: 1.2;
+    color: $color-neutral-grayishblue;
+  }
+}
+
+.cards-articles{
+  display: grid;
+  grid-row-gap: 3rem;
+  grid-template-rows: 25rem minmax(25rem, max-content);
+  font-family: $font-primary;
+  background-color: $color-neutral-white;
+  border-radius: 1.5rem;
+  overflow: hidden;
+
+  &__bg-1{
+    background-image: url(../img/image-currency.jpg);
+  }
+  &__bg-2{
+    background-image: url(../img/image-restaurant.jpg);
+  }
+  &__bg-3{
+    background-image: url(../img/image-plane.jpg);
+  }
+  &__bg-4{
+    background-image: url(../img/image-confetti.jpg);
+  }
+
+  &__img-parent{
+
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover .cards-articles__img-child{
+      transform: scale(1.2);
+    }
+  }
+
+  &__img-child{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    transition: all .2s;
+
+  }
+
+  &__author{
+    font-size: 1.5rem;
+    color: $color-neutral-grayishblue;
+  }
+  &__title{
+    font-size: 2.5rem;
+    color: $color-primary-darkblue;
+  }
+  &__text{
+    font-size: 1.6rem;
+    line-height: 1.2;
+    color: $color-neutral-grayishblue;
+  }
+
+  &__wrapper{
+    display: grid;
+    padding: 5rem 2.5rem;
+    grid-row-gap: 2rem;
+  }
+}
