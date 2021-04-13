@@ -371,7 +371,7 @@ body {
   animation-name: moveInLeft;
   animation-duration: 6s;
   animation-timing-function: ease-in-out; }
-  @media only screen and (max-width: 50em) {
+  @media only screen and (max-width: 62.5em) {
     .adv-box-1 {
       animation-duration: 3s; } }
   @media only screen and (max-width: 34.375em) {

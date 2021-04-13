@@ -180,7 +180,7 @@
   animation-duration: 6s;
   animation-timing-function: ease-in-out;
 
-  @media only screen and (max-width: $bp-smaller) {
+  @media only screen and (max-width: $bp-small) {
     animation-duration: 3s;
   }
   @media only screen and (max-width: $bp-smallest) {
