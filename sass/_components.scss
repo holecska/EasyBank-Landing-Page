@@ -5,6 +5,11 @@
   justify-content: center;
   height: 45rem;
   margin-top: 8rem;
+
+  @media only screen and (max-width: $bp-smaller) {
+      grid-template-columns: 1fr;
+      height: auto;
+  }
 }
 
 .text{
@@ -17,11 +22,21 @@
 
   grid-template-columns: minmax(min-content, 45rem);
 
+  @media only screen and (max-width: $bp-smaller) {
+    padding: 10rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    padding: 5rem;
+  }
+
   &__title{
     font-family: $font-primary;
     font-size: 3.5rem;
     color: $color-primary-darkblue;
     line-height: 1.2;
+
   }
   &__text{
     font-family: $font-primary;
@@ -42,6 +57,9 @@
   background-position: left center;
   height: 100%;
 
+  @media only screen and (max-width: $bp-smaller) {
+    grid-column: 1/-1;
+  }
 }
 
 .img-mockup{
@@ -53,6 +71,14 @@
   width: 55rem;
   height: auto;
   transform: translateX(10rem) translateY(-10rem);
+
+  @media only screen and (max-width: $bp-smaller) {
+    position: relative;
+    transform: translateX(10rem);
+  }
+  @media only screen and (max-width: $bp-smallest) {
+    width: 35rem;
+  }
 }
 
 //////////////SECTION 2 ////////////////
@@ -99,12 +125,28 @@
   grid-column-gap: 2rem;
   grid-template-columns: repeat(4, 1fr);
 
+  @media only screen and (max-width: $bp-small) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 5rem;
+  }
+  @media only screen and (max-width: $bp-smallest) {
+    grid-template-columns: 1fr;
+    grid-row-gap: 5rem;
+  }
+
   &--why{
     grid-row: 3/4;
   }
 
   &--latest{
     grid-row: 2/3;
+    @media only screen and (max-width: $bp-smaller) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media only screen and (max-width: $bp-smallest) {
+      grid-template-columns: 1fr;
+      grid-row-gap: 3rem;
+    }
   }
 }
 
@@ -126,19 +168,33 @@
 
 .adv-box-2{
   animation-name: moveInLeft;
-  animation-duration: 4s;
+  animation-duration: 5s;
   animation-timing-function: ease-in-out;
+
+  @media only screen and (max-width: $bp-smaller) {
+    animation-duration: 2s;
+  }
 }
 .adv-box-1{
   animation-name: moveInLeft;
-  animation-duration: 5s;
+  animation-duration: 6s;
   animation-timing-function: ease-in-out;
+
+  @media only screen and (max-width: $bp-smaller) {
+    animation-duration: 3s;
+  }
+  @media only screen and (max-width: $bp-smallest) {
+    animation-duration: 2s;
+  }
 }
 
 .adv-box-3{
   animation-name: moveInLeft;
   animation-duration: 3s;
   animation-timing-function: ease-in-out;
+  @media only screen and (max-width: $bp-smallest) {
+    animation-duration: 2s;
+  }
 }
 .adv-box-4{
   animation-name: moveInLeft;
@@ -152,6 +208,10 @@
   grid-row-gap: 3rem;
   font-family: $font-primary;
 
+  @media only screen and (max-width: $bp-smallest) {
+    justify-items: center;
+  }
+
   &__img{
     width: 6rem;
     height: 6rem;
@@ -164,6 +224,11 @@
     font-size: 1.6rem;
     line-height: 1.2;
     color: $color-neutral-grayishblue;
+
+    @media only screen and (max-width: $bp-smallest) {
+      text-align: center;
+      padding: 0 1.5rem;
+    }
   }
 }
 

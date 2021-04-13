@@ -7,11 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/3ad538c219.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" defer src="main.js"></script>
     <title>Easybank Landing Page</title>
   </head>
   <body>
     <header class="heading-container">
-      <div class="heading">
+      <div class="heading" id="header-big">
         <img src="img/logo.svg" alt="easybank Logo">
         <ul class="heading__nav">
           <li class="heading__item">
@@ -30,7 +32,36 @@
             <a href="" class="heading__link">Careers</a>
           </li>
         </ul>
-        <button class="btn">Request Invite</button>
+        <div class="header-menu__bar" onclick="openNav()">
+          <i class="fa fa-bars"></i>
+        </div>
+        <button class="btn btn-header">Request Invite</button>
+      </div>
+      <div class="header-menu" id="menu">
+        <div class="closebtn" onclick="closeNav()">
+          &times;
+        </div>
+        <div class="header-menu-container">
+          <img class="logo-menu" src="img/logo.svg" alt="easybank Logo">
+          <ul class="heading__nav--menu">
+            <li class="heading__item">
+              <a href="" class="heading__link">Home</a>
+            </li>
+            <li class="heading__item">
+              <a href="" class="heading__link">About</a>
+            </li>
+            <li class="heading__item">
+              <a href="" class="heading__link">Contact</a>
+            </li>
+            <li class="heading__item">
+              <a href="" class="heading__link">Blog</a>
+            </li>
+            <li class="heading__item">
+              <a href="" class="heading__link">Careers</a>
+            </li>
+          </ul>
+          <button class="btn btn-menu">Request Invite</button>
+        </div>
       </div>
     </header>
   <main class="main-area">
@@ -165,12 +196,12 @@
       </div>
 
       <div class="footer__middle">
-        <ul class="footer__list1">
+        <ul class="footer__list footer__list--1">
           <li class="footer__list-item"><a href="" class="footer__link">About Us</a></li>
           <li class="footer__list-item"><a href="" class="footer__link">Contact</a></li>
           <li class="footer__list-item"><a href="" class="footer__link">Blog</a></li>
         </ul>
-        <ul class="footer__list2">
+        <ul class="footer__list footer__list--2">
           <li class="footer__list-item"><a href="" class="footer__link">Careers</a></li>
           <li class="footer__list-item"><a href="" class="footer__link">Support</a></li>
           <li class="footer__list-item"><a href="" class="footer__link">Privacy Policy</a></li>

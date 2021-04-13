@@ -1,4 +1,4 @@
-.heading-container{
+.heading-container {
   background-color: $color-neutral-white;
   height: 8rem;
   width: 100%;
@@ -7,7 +7,8 @@
   position: fixed;
   z-index: 15;
 }
-.heading{
+
+.heading {
   width: 80vw;
   margin: 0 auto;
   display: grid;
@@ -16,44 +17,57 @@
   justify-items: center;
   grid-template-columns: max-content 1fr 20rem;
 
-  & img{
+  @media only screen and (max-width: $bp-smaller) {
+      grid-template-columns: 1fr 1fr;
+      justify-items: start;
+  }
+
+  & img {
     width: 15rem;
   }
 
-  &__nav{
+  &__nav {
     list-style: none;
     font-size: 1.8rem;
     display: flex;
+
+    @media only screen and (max-width: $bp-small) {
+      grid-column: 2/-1;
+    }
+
+    @media only screen and (max-width: $bp-smaller) {
+      display: none;
+    }
   }
 
-  &__item{
+  &__item {
     height: 8rem;
     display: flex;
     align-items: center;
     border-bottom: 4px solid transparent;
-    &:not(:last-child){
+
+    &:not(:last-child) {
       margin-right: 1.5rem;
     }
-    &:hover{
+
+    &:hover {
       border-bottom: 4px solid $color-primary-darkblue;
       //border-top: 4px solid $color-neutral-white;
     }
   }
 
   &__link:link,
-  &__link:visited{
+  &__link:visited {
     color: $color-neutral-grayishblue;
     text-decoration: none;
     padding: 1rem 1.5rem;
   }
-
 }
 
 .btn,
 .btn:link,
 .btn:visited {
   background-image: linear-gradient(to right, $color-primary-limegreen, $color-primary-brightcyan);
-
   color: #fff;
   border: none;
   border-radius: 50px;
@@ -66,102 +80,215 @@
   max-width: max-content;
   justify-self: end;
 
-  &:hover{
+  &:hover {
     transform: translateY(-3px);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   }
 
   &:active,
-  &:focus{
+  &:focus {
     outline: none;
     transform: translateY(-1px);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   }
 }
 
-.btn-text{
-    margin-top: 5rem;
-    //justify-self: start;
+.btn-text {
+  margin-top: 5rem;
+  //justify-self: start;
 }
-
 /////////////////////////// FOOTER ////////////////////////
-.footer{
+
+.footer {
   padding: 10rem 10vw;
   background-color: $color-primary-darkblue;
 
-  &__container{
+  &__container {
     display: grid;
     grid-template-columns: max-content repeat(2, 1fr);
     grid-column-gap: 10rem;
+
+    @media only screen and (max-width: $bp-small) {
+      grid-column-gap: 2rem;
+      grid-template-columns: max-content 1fr max-content;
+    }
+    @media only screen and (max-width: $bp-smaller) {
+      grid-template-columns: 1fr;
+      grid-row-gap: 5rem;
+      justify-items: center;
+    }
   }
 
-  &__icon-container svg{
+  &__icon-container svg {
     width: 2rem;
     height: 2rem;
     fill: $color-neutral-white;
 
-    &:not(:last-child){
+    @media only screen and (max-width: $bp-smaller) {
+      margin-top: 5rem;
+    }
+
+    &:not(:last-child) {
       margin-right: 1rem;
     }
 
-    &:hover{
+    &:hover {
       cursor: pointer;
       fill: $color-primary-limegreen;
     }
   }
 
-  &__left{
+  &__left {
     display: flex;
     flex-direction: column;
 
-    & img{
+    & img {
       margin-bottom: auto;
     }
   }
 
-  &__middle{
+  &__middle {
     display: grid;
     grid-template-columns: repeat(2, max-content);
     grid-column-gap: 5rem;
+    justify-content: center;
+
+    @media only screen and (max-width: $bp-small) {
+      grid-column-gap: 2rem;
+    }
+    @media only screen and (max-width: $bp-smaller) {
+      grid-column-gap: 5rem;
+    }
+    @media only screen and (max-width: $bp-smallest) {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
   }
 
-  &__list-item{
+  &__list {
+    display: flex;
+    flex-direction: column;
 
+    &--2 {
+      align-items: flex-end;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      align-items:center;
+    }
+  }
+  &__list-item {
     font-size: 1.8rem;
     font-family: $font-primary;
 
-    &:not(:last-child){
+    &:not(:last-child) {
       margin-bottom: 2.5rem;
     }
-
+    @media only screen and (max-width: $bp-smallest) {
+      margin-bottom: 2.5rem;
+    }
   }
 
   &__link:link,
-  &__link:visited{
+  &__link:visited {
     color: $color-neutral-white;
     text-decoration: none;
     cursor: pointer;
 
-    &:hover{
+    &:hover {
       color: $color-primary-limegreen;
     }
   }
 
-  &__right{
+  &__right {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+
+    @media only screen and (max-width: $bp-smaller) {
+      align-items: center;
+    }
   }
 
-  &__right button{
+  &__right button {
     margin-bottom: auto;
+
+    @media only screen and (max-width: $bp-smaller) {
+      margin-bottom: 3rem;
+    }
   }
 
-  &__right p{
+  &__right p {
     font-size: 1.5rem;
     color: $color-neutral-grayishblue;
     font-family: $font-primary;
     text-align: right;
   }
+}
 
+@media only screen and (max-width: $bp-small) {
+  .btn-header {
+    display: none;
+  }
+}
+
+// Styling the hamburger menu
+
+.header-menu {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: $color-neutral-white;
+  display: none;
+}
+.header-menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 7rem;
+  position: relative;
+}
+
+.logo-menu {
+  position: relative;
+  left: -2rem;
+}
+.closebtn {
+  font-size: 5rem;
+  color: $color-neutral-grayishblue;
+  margin: auto;
+  display: block;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  cursor: pointer;
+  z-index: 100;
+  // @media only screen and (max-width: $bp-small) {
+  //   display: block;
+  //   cursor: pointer;
+  // }
+}
+
+.header-menu__bar {
+  font-size: 3rem;
+  color: $color-primary-limegreen;
+  cursor: pointer;
+  display: none;
+  @media only screen and (max-width: $bp-smaller) {
+    display: block;
+    justify-self: end;
+  }
+}
+
+.heading__nav--menu {
+  align-items: center;
+  display: flex;
+  font-size: 1.8rem;
+  flex-direction: column;
+
+}
+
+.btn-menu {
+  margin: 5rem 0;
 }
